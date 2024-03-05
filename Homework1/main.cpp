@@ -212,14 +212,14 @@ void Display7() {
     // (v0,v1,v2,v3), (v4,v5,v6,v7), ...
     // There should be specified at least 4 vertices between
     // glBegin and glEnd.
-    glPolygonMode(GL_FRONT, GL_FILL);
     glColor3f(1, 0.1, 0.1); // red
     glBegin(GL_QUADS);
     // add lines of code here
     glVertex2f(1.0, 1.0);
-    glVertex2f(0.35, 0.7);
-    glVertex2f(0.5, 0.5);
     glVertex2f(1.0, 0.5);
+    glVertex2f(0.5, 0.5);
+    glVertex2f(0.35, 0.7);
+    glVertex2f(1.0, 1.0);
     glEnd();
 }
 
@@ -256,7 +256,7 @@ void Display8() {
     glVertex2f(-0.58, 0);
     glEnd();
 
-    glColor3f(1.0, 1.0, 1.0); // red
+    glColor3f(1.0, 1.0, 1.0); // white
     glBegin(GL_POLYGON);
     // add lines of code here
     glVertex2f(-0.56, 0);
