@@ -178,7 +178,6 @@ void Display5() {
     glVertex2f(1.0, 0.85);
     glVertex2f(0.5, 0.65);
     glVertex2f(0.5, 0.5);
-    glVertex2f(1.0, 1.0);
     glEnd();
 }
 
@@ -197,6 +196,7 @@ void Display6() {
     glVertex2f(1.0, 1.0);
     glVertex2f(1.0, 0.85);
     glVertex2f(0.85, 0.85);
+
     glVertex2f(-1.0, -1.0);
     glVertex2f(-1.0, -0.85);
     glVertex2f(-0.85, -0.85);
@@ -219,7 +219,6 @@ void Display7() {
     glVertex2f(1.0, 0.5);
     glVertex2f(0.5, 0.5);
     glVertex2f(0.35, 0.7);
-    glVertex2f(1.0, 1.0);
     glEnd();
 }
 
@@ -241,7 +240,6 @@ void Display8() {
     glVertex2f(0.8, 0);
     glVertex2f(0.4, -0.7);
     glVertex2f(-0.4, -0.7);
-    glVertex2f(-0.8, 0);
     glEnd();
 
     glColor3f(1, 0.1, 0.1); // red
@@ -253,7 +251,6 @@ void Display8() {
     glVertex2f(0.58, 0);
     glVertex2f(0.28, -0.5);
     glVertex2f(-0.28, -0.5);
-    glVertex2f(-0.58, 0);
     glEnd();
 
     glColor3f(1.0, 1.0, 1.0); // white
@@ -265,7 +262,6 @@ void Display8() {
     glVertex2f(0.56, 0);
     glVertex2f(0.26, -0.48);
     glVertex2f(-0.26, -0.48);
-    glVertex2f(-0.56, 0);
     glEnd();
 }
 
