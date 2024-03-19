@@ -182,32 +182,9 @@ void Display2() {
     }
     glEnd();
 }
+//############################################################################################################
 
-void Display3()
-{
-    //double ratia = 0.02;
-    //double xmin = 0;
-    //double xmax = 100;
-    //double x1,y1;
-
-    //glColor3f(0.5, 0.0, 1.0);
-    //glBegin(GL_LINE_STRIP);
-    //for (double x = 0; x < xmax; x += ratia) {
-    //    x1 = x / xmax;
-    //    if (x == 0)
-    //        y1 = 1;
-    //    else if (x > 0) {
-    //        double ceil_value = ceil(x) - x; // cel mai mic nr mai mare ca x
-    //        double floor_value = x - floor(x); // cel mai mare nr mai mic ca x
-    //        if (ceil_value < floor_value)
-    //            y1 = ceil_value / x;
-    //        else
-    //            y1 = floor_value / x;
-    //    }
-    //   
-    //    glVertex2f(x1, y1-ratia);
-    //}
-    //glEnd();
+void Display3() {
 
     double ratia = 0.05;
     double xmax = 25;
@@ -232,8 +209,8 @@ void Display3()
 	glEnd();
 }
 
-void Display4()
-{
+void Display4() {
+
     double a = 0.2;
     double pi = 4 * atan(1.0);
     double x, y, x1, y1, x2, y2;
@@ -241,7 +218,7 @@ void Display4()
     glColor3f(0.5, 0.0, 1.0);
     glBegin(GL_TRIANGLES);
 
-    for (double t = -pi / 2; t < -pi / 6; t += 0.025) {
+    for (double t = -pi / 2; t < - pi / 6; t += 0.025) {
         if (t == -pi / 6 || t == pi / 6)
             continue;
         x1 = a / (4 * cos(t) * cos(t) - 3);
@@ -269,35 +246,9 @@ void Display4()
 }
 
 
-void Display5() { //finalizat
+void Display5() { 
 
-    double xmax = DBL_MIN, ymax=DBL_MIN, xmin=DBL_MAX, ymin=DBL_MAX;
     double a = 0.1;
-    double b = 0.2;
-    double ratia = 0.001;
-
-    for (double t = -10; t < 10; t += ratia) {
-        double x = a * t - b * sin(t);
-        xmax = (xmax > x) ? xmax : x;
-        xmin = (xmin < x) ? xmin : x;
-        double y = a - b * cos(t);
-        ymax = (ymax > y) ? ymax : y;
-        ymin = (ymin < y) ? ymin : y;
-    }
-
-    xmax = (fabs(xmax) > fabs(xmin)) ? fabs(xmax) : fabs(xmin);
-    ymax = (fabs(ymax) > fabs(ymin)) ? fabs(ymax) : fabs(ymin);
-
-    glColor3f(0.5, 0.0, 1.0);
-    glBegin(GL_LINE_STRIP);
-    for (double t = -10 ; t < 10; t += ratia) {
-        double x = (a * t - b * sin(t)) / xmax;
-        double y = (a - b * cos(t)) / (3 * ymax);
-		glVertex2f(x, y);
-	}
-    glEnd();
-
-   /* double a = 0.1;
     double b = 0.2;
     double ratia = 0.005;
     double pi = 4 * atan(1.0);
@@ -311,10 +262,11 @@ void Display5() { //finalizat
 		y = (a - b * cos(t));
 		glVertex2f(x, y);
 	}
-    glEnd();*/
+    glEnd();
 }
 
 void Display6() {
+
     double a = 0.4;
     double pi = 4 * atan(1.0);
     double ratia = 0.0025;
@@ -335,7 +287,6 @@ void Display6() {
         glVertex2f(x, y);
     }
     glEnd();
-   
 }
 
 void Display7() {
