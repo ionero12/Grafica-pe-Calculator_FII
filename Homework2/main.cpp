@@ -213,35 +213,45 @@ void Display4() {
 
     double a = 0.2;
     double pi = 4 * atan(1.0);
-    double x, y, x1, y1, x2, y2;
+    double x, y;
+    double xStart = -0.99, yStart = 0.99;
+    glVertex2f(xStart, yStart);
+    double ratia = 0.005;
+    int count = 0;
 
     glColor3f(0.5, 0.0, 1.0);
     glBegin(GL_TRIANGLES);
 
-    for (double t = -pi / 2; t < - pi / 6; t += 0.025) {
-        if (t == -pi / 6 || t == pi / 6)
-            continue;
-        x1 = a / (4 * cos(t) * cos(t) - 3);
-        y1 = (a * tan(t)) / (4 * cos(t) * cos(t) - 3);
-        x2 = a / (4 * cos(t + 0.005) * cos(t + 0.005) - 3);
-        y2 = (a * tan(t + 0.005)) / (4 * cos(t + 0.005) * cos(t + 0.005) - 3);
-        glVertex2f(-0.95, 0.95);
-        glVertex2f(x1 , y1);
-        glVertex2f(x2 , y2);
+    for (double t = -pi / 2 + ratia; t < -pi / 6; t += ratia, count++) {
+        double x = a / (4 * cos(t) * cos(t) - 3);
+        double y = (a * tan(t)) / (4 * cos(t) * cos(t) - 3);
+        double xNext = a / (4 * cos(t + ratia) * cos(t + ratia) - 3);
+        double yNext = (a * tan(t + ratia)) / (4 * cos(t + ratia) * cos(t + ratia) - 3);
+        //if (x >= xStart && y <= yStart && y > 0.2) {
+            if (count % 4 == 2) {
+                glVertex2f(x, y);
+                glVertex2f(xNext, yNext);
+                glVertex2f(xStart, yStart);
+            }
+        //}
     }
+
     glEnd();
 
     glColor3f(0.5, 0.0, 1.0);
-    glBegin(GL_POINTS);
+    glBegin(GL_LINE_LOOP);
+    glVertex2f(xStart, yStart);
+    glVertex2f(a / (4 * cos(-pi / 2) * cos(-pi / 2) - 3), yStart);
 
-    for (double t = -pi / 2; t < -pi / 6; t += 0.0005) {
-        if (t == -pi / 6 || t == pi / 6)
-            continue;
-        x = a / (4 * cos(t) * cos(t) - 3);
-        y = (a * tan(t)) / (4 * cos(t) * cos(t) - 3);
-        glVertex2f(x, y);
+    for (double t = -pi / 2; t < -pi / 6; t += ratia) {
+        double x = a / (4 * cos(t) * cos(t) - 3);
+        double y = (a * tan(t)) / (4 * cos(t) * cos(t) - 3);
+        if (x >= xStart && y <= yStart) {
+            glVertex2f(x, y);
+        }
     }
     glEnd();
+
 
 }
 
